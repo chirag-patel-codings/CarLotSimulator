@@ -6,28 +6,60 @@ namespace CarLotSimulator
     {
         static void Main(string[] args)
         {
-            //TODO
-
-            //Create a seperate class file called Car
-            //Car shall have the following properties: Year, Make, Model, EngineNoise, HonkNoise, IsDriveable
-            //Car shall have the following methods: MakeEngineNoise(), MakeHonkNoise()
-            //The methods should take one string parameter: the respective noise property
-
-
-            //Now that the Car class is created we can instanciate 3 new cars
-            //Set the properties for each of the cars
-            //Call each of the methods for each car
-
-            //*************BONUS*************//
-
-            // Set the properties utilizing the 3 different ways we learned about, one way for each car
-
-            //*************BONUS X 2*************//
-
-            //Create a CarLot class
-            //It should have at least one property: a List of cars
-            //Instanciate the a Carlot at the beginning of the program and as you create a car add the car to the list.
-            //At the end iterate through the list printing each of car's Year, Make, and Model to the console
+            
+            // Creating an Instance of the 'CarLot' class
+            CarLot carLot = new CarLot();
+            
+            // Creating an Object instance using 'Default' Constructor method:
+            Car objToyota = new Car();
+            
+            objToyota.Make = "Toyota";
+            objToyota.Model = "Corona";
+            objToyota.Year = 2015;
+            objToyota.MakeEngineNoise("Hum....Pur...");
+            objToyota.MakeHonkNoise("Honk");
+            
+            // Adding to the Carlot
+            carLot.ListOfCars.Add(objToyota);
+            
+            
+            // Creating an Object instance using 'Default' Constructor method - 2:
+            Car objHonda = new Car()
+            {
+                Make = "Honda",
+                Model = "Odyssey",
+                Year = 2016
+            };
+            objHonda.MakeEngineNoise("tick-tick-tick...");
+            objHonda.MakeHonkNoise("Beep");
+            
+            // Adding to the Carlot
+            carLot.ListOfCars.Add(objHonda);
+            
+            
+            // Creating an Object instance using 'Object Initializer' Syntax:
+            Car objNissan = new Car
+            {
+                Make = "Nissan",
+                Model = "Rogue",
+                Year = 2014
+            };
+            objNissan.MakeEngineNoise("Tink...and...Click...");
+            objNissan.MakeHonkNoise("Blare");
+            
+            // Adding to the Carlot
+            carLot.ListOfCars.Add(objNissan);
+ 
+            
+            // Iterating through the list and printing the values of each object's properties
+            int loopCounter = 0;
+            foreach (var car in carLot.ListOfCars)
+            {
+                Console.WriteLine($"Added Car {++loopCounter}:");
+                Console.WriteLine($"Year: {car.Year}, Make: {car.Make}, and Model: {car.Model}, that makes EngineNoise like '{car.EngineNoise}' & HonkNoise like '{car.HonkNoise}'.\n");
+            }
+            
+            
         }
     }
 }
