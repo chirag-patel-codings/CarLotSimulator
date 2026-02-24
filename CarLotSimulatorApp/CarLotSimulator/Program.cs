@@ -23,7 +23,7 @@ namespace CarLotSimulator
             carLot.ListOfCars.Add(objToyota);
             
             
-            // Creating an Object instance using 'Default' Constructor method - 2:
+            // Creating an Object instance using 'Default' Constructor Method - 2:
             Car objHonda = new Car()
             {
                 Make = "Honda",
@@ -35,15 +35,23 @@ namespace CarLotSimulator
             
             // Adding to the Carlot
             carLot.ListOfCars.Add(objHonda);
+
             
-            
-            // Creating an Object instance using 'Object Initializer' Syntax:
+            // Creating an Object instance using 'PARAMETERIZED CONSTRUCTOR INITIALIZER' Syntax - Method - 1:
+            // PARAMETERIZED CONSTRUCTOR INITIALIZATION: Either Braces or Brackets: 'Braces' below
+            /*
             Car objNissan = new Car
             {
                 Make = "Nissan",
                 Model = "Rogue",
                 Year = 2014
             };
+            */
+            
+            // Creating an Object instance using 'PARAMETERIZED CONSTRUCTOR INITIALIZER' Syntax - Method - 2:
+            // PARAMETERIZED CONSTRUCTOR INITIALIZATION: Either Braces or Brackets: 'Brackets' below
+            Car objNissan = new Car("Nissan", "Rogue", 2014);
+            
             objNissan.MakeEngineNoise("Tink...and...Click...");
             objNissan.MakeHonkNoise("Blare");
             
