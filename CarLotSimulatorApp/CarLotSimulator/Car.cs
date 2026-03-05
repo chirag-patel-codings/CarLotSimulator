@@ -11,6 +11,8 @@ namespace CarLotSimulator
         // 'Default' Constructor
         public Car()
         {
+            // Static Keyword: Exercise 2
+            CarLot._numberOfCars++;
         }
 
         // 'Initializer Syntax' Constructor
@@ -19,6 +21,9 @@ namespace CarLotSimulator
             Make = make;
             Model = model;
             Year = year;
+
+            // Static Keyword: Exercise 2
+            CarLot._numberOfCars++;
         }
 
 
